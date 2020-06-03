@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48EC70F596C55FC5A30F9310 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48EC7E789758FDD33A1A78D1 /* Actions.sks */; };
+		48EC739E18BE2774F3019136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC79CBD1355062F4D9D1E0 /* AppDelegate.swift */; };
+		48EC7AA2790991C7C6B5715A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC702772A992450592075A /* GameScene.swift */; };
+		48EC7ADF0A835A8270A161C0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48EC79538981C62ED21E5055 /* GameScene.sks */; };
+		48EC7B318FB9754142529B2D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC7AE23A94D289CD603983 /* GameViewController.swift */; };
+		48EC7BF142A4A9C126972392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EC7BF3FF2C0D7A2794A533 /* Assets.xcassets */; };
+		48EC7C45604B5E612C90467B /* butterflychaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC7AEAE6665D1C7DD9BFDC /* butterflychaseTests.swift */; };
+		48EC7D3FA574898B962DDD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EC7E5C5C3E12FA374D3AB6 /* Main.storyboard */; };
+		48EC7EAC7A5B8FBA7B25800D /* butterflychaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC7C056CC33AE8605B9F17 /* butterflychaseUITests.swift */; };
+		48EC7EC4732E17CE3F1AFFDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EC74584A1B995679742CDE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48EC72E3684D181479AC2760 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48EC78AD1E1F090396C45B3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48EC7D92835FB6889CCAA045;
+			remoteInfo = butterflychase;
+		};
+		48EC74C6B0D0EBD0C9519361 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48EC78AD1E1F090396C45B3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48EC7D92835FB6889CCAA045;
+			remoteInfo = butterflychase;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		48EC702772A992450592075A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		48EC70EE6860FF359334E779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		48EC717CBF806AC2F418C862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48EC769F1AE496E3B6CE7A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48EC76D19AFFFE8D32D01354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		48EC7722F387769DCFB9D333 /* butterflychase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = butterflychase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EC774996170325748702F5 /* butterflychaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = butterflychaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EC79538981C62ED21E5055 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		48EC79CBD1355062F4D9D1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48EC7AE23A94D289CD603983 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		48EC7AEAE6665D1C7DD9BFDC /* butterflychaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = butterflychaseTests.swift; sourceTree = "<group>"; };
+		48EC7BF3FF2C0D7A2794A533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48EC7C056CC33AE8605B9F17 /* butterflychaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = butterflychaseUITests.swift; sourceTree = "<group>"; };
+		48EC7C2D870534C4957EA5BD /* butterflychaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = butterflychaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EC7D2802D267D04A6B27A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		48EC7E789758FDD33A1A78D1 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48EC772CFFFC495A570EAFCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EC7B79C01904F7B70CE05D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EC7FF0891FD6025D4E6345 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48EC700FC20AB531ABBCA9AE /* butterflychaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				48EC7D2802D267D04A6B27A4 /* Info.plist */,
+				48EC7C056CC33AE8605B9F17 /* butterflychaseUITests.swift */,
+			);
+			path = butterflychaseUITests;
+			sourceTree = "<group>";
+		};
+		48EC7070AEF097803E54F923 /* butterflychaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				48EC70EE6860FF359334E779 /* Info.plist */,
+				48EC7AEAE6665D1C7DD9BFDC /* butterflychaseTests.swift */,
+			);
+			path = butterflychaseTests;
+			sourceTree = "<group>";
+		};
+		48EC73BF30ABA676B641435C /* butterflychase */ = {
+			isa = PBXGroup;
+			children = (
+				48EC76D19AFFFE8D32D01354 /* Info.plist */,
+				48EC7BF3FF2C0D7A2794A533 /* Assets.xcassets */,
+				48EC74584A1B995679742CDE /* LaunchScreen.storyboard */,
+				48EC79CBD1355062F4D9D1E0 /* AppDelegate.swift */,
+				48EC7E5C5C3E12FA374D3AB6 /* Main.storyboard */,
+				48EC79538981C62ED21E5055 /* GameScene.sks */,
+				48EC7E789758FDD33A1A78D1 /* Actions.sks */,
+				48EC702772A992450592075A /* GameScene.swift */,
+				48EC7AE23A94D289CD603983 /* GameViewController.swift */,
+			);
+			path = butterflychase;
+			sourceTree = "<group>";
+		};
+		48EC7EEACEF131B1C2BD12FF = {
+			isa = PBXGroup;
+			children = (
+				48EC7F83349C24E2B5B3CDD1 /* Products */,
+				48EC73BF30ABA676B641435C /* butterflychase */,
+				48EC7070AEF097803E54F923 /* butterflychaseTests */,
+				48EC700FC20AB531ABBCA9AE /* butterflychaseUITests */,
+			);
+			sourceTree = "<group>";
+		};
+		48EC7F83349C24E2B5B3CDD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48EC7722F387769DCFB9D333 /* butterflychase.app */,
+				48EC774996170325748702F5 /* butterflychaseTests.xctest */,
+				48EC7C2D870534C4957EA5BD /* butterflychaseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48EC743C352B5413AB5F163E /* butterflychaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EC7581C5C1F1B46D62BC04 /* Build configuration list for PBXNativeTarget "butterflychaseUITests" */;
+			buildPhases = (
+				48EC7CF8A8873F4DE91147E2 /* Sources */,
+				48EC7B79C01904F7B70CE05D /* Frameworks */,
+				48EC72FA775CCA042F73619C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48EC7EC1678FAF05EC05AA2A /* PBXTargetDependency */,
+			);
+			name = butterflychaseUITests;
+			productName = butterflychaseUITests;
+			productReference = 48EC7C2D870534C4957EA5BD /* butterflychaseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		48EC7D92835FB6889CCAA045 /* butterflychase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EC7C5DE0755395B99DFA6C /* Build configuration list for PBXNativeTarget "butterflychase" */;
+			buildPhases = (
+				48EC7D928C33868CDF9BF60D /* Sources */,
+				48EC7FF0891FD6025D4E6345 /* Frameworks */,
+				48EC7E04A5DE6B7827B61A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = butterflychase;
+			productName = butterflychase;
+			productReference = 48EC7722F387769DCFB9D333 /* butterflychase.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48EC7ED842567C0719A36926 /* butterflychaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EC71B1F85D4AAD7E55746F /* Build configuration list for PBXNativeTarget "butterflychaseTests" */;
+			buildPhases = (
+				48EC7A4CBCBAFAB87F72CE84 /* Sources */,
+				48EC772CFFFC495A570EAFCE /* Frameworks */,
+				48EC7DE18E38C32A0B443F8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48EC7FDF010DC20DAE6BD8CE /* PBXTargetDependency */,
+			);
+			name = butterflychaseTests;
+			productName = butterflychaseTests;
+			productReference = 48EC774996170325748702F5 /* butterflychaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48EC78AD1E1F090396C45B3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = voraentertainment;
+				TargetAttributes = {
+					48EC7D92835FB6889CCAA045 = {
+						DevelopmentTeam = A7FB9QLQNX;
+					};
+				};
+			};
+			buildConfigurationList = 48EC7C99D017D3A02DA01BDC /* Build configuration list for PBXProject "butterflychase" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 48EC7EEACEF131B1C2BD12FF;
+			productRefGroup = 48EC7F83349C24E2B5B3CDD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48EC7D92835FB6889CCAA045 /* butterflychase */,
+				48EC7ED842567C0719A36926 /* butterflychaseTests */,
+				48EC743C352B5413AB5F163E /* butterflychaseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48EC72FA775CCA042F73619C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EC7DE18E38C32A0B443F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EC7E04A5DE6B7827B61A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EC7BF142A4A9C126972392 /* Assets.xcassets in Resources */,
+				48EC7EC4732E17CE3F1AFFDC /* LaunchScreen.storyboard in Resources */,
+				48EC7D3FA574898B962DDD13 /* Main.storyboard in Resources */,
+				48EC7ADF0A835A8270A161C0 /* GameScene.sks in Resources */,
+				48EC70F596C55FC5A30F9310 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48EC7A4CBCBAFAB87F72CE84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EC7C45604B5E612C90467B /* butterflychaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EC7CF8A8873F4DE91147E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EC7EAC7A5B8FBA7B25800D /* butterflychaseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EC7D928C33868CDF9BF60D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EC739E18BE2774F3019136 /* AppDelegate.swift in Sources */,
+				48EC7AA2790991C7C6B5715A /* GameScene.swift in Sources */,
+				48EC7B318FB9754142529B2D /* GameViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48EC7EC1678FAF05EC05AA2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48EC7D92835FB6889CCAA045 /* butterflychase */;
+			targetProxy = 48EC72E3684D181479AC2760 /* PBXContainerItemProxy */;
+		};
+		48EC7FDF010DC20DAE6BD8CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48EC7D92835FB6889CCAA045 /* butterflychase */;
+			targetProxy = 48EC74C6B0D0EBD0C9519361 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48EC74584A1B995679742CDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EC717CBF806AC2F418C862 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		48EC7E5C5C3E12FA374D3AB6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EC769F1AE496E3B6CE7A33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48EC72D10287E6C9B41C9AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = butterflychaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = butterflychase;
+			};
+			name = Release;
+		};
+		48EC761A8A5B7EAFB9420015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/butterflychase.app/butterflychase";
+				INFOPLIST_FILE = butterflychaseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		48EC770F2BEC1F1A5CDC4800 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A7FB9QLQNX;
+				INFOPLIST_FILE = butterflychase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48EC777528EA6C5675C15504 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48EC78BA5DCBE125B915ECAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48EC7BD565ACDE07733D15CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/butterflychase.app/butterflychase";
+				INFOPLIST_FILE = butterflychaseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		48EC7C75A8DBB1ED54B65099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = butterflychaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = butterflychase;
+			};
+			name = Debug;
+		};
+		48EC7CFEC0ACAE9DB99D8F39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A7FB9QLQNX;
+				INFOPLIST_FILE = butterflychase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48EC71B1F85D4AAD7E55746F /* Build configuration list for PBXNativeTarget "butterflychaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EC7BD565ACDE07733D15CF /* Debug */,
+				48EC761A8A5B7EAFB9420015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48EC7581C5C1F1B46D62BC04 /* Build configuration list for PBXNativeTarget "butterflychaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EC7C75A8DBB1ED54B65099 /* Debug */,
+				48EC72D10287E6C9B41C9AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48EC7C5DE0755395B99DFA6C /* Build configuration list for PBXNativeTarget "butterflychase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EC770F2BEC1F1A5CDC4800 /* Debug */,
+				48EC7CFEC0ACAE9DB99D8F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48EC7C99D017D3A02DA01BDC /* Build configuration list for PBXProject "butterflychase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EC777528EA6C5675C15504 /* Debug */,
+				48EC78BA5DCBE125B915ECAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48EC78AD1E1F090396C45B3E /* Project object */;
+}
