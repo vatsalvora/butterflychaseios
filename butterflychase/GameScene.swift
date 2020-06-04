@@ -16,7 +16,8 @@ class GameScene: SKScene {
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
-    private var spinnyNode : SKSpriteNode?
+    private var butterfly : SKSpriteNode?
+    private var bottle : SKSpriteNode?
     private var background : SKSpriteNode?
     
     override func sceneDidLoad() {
@@ -30,20 +31,23 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        // Create shape node to use during mouse interaction
-//        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKSpriteNode(imageNamed: "butterfly.pdf")
-        
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.zPosition=5
+
+        self.butterfly = SKSpriteNode(imageNamed: "butterfly")
+        self.bottle = SKSpriteNode(imageNamed: "bottle")
+        if let butterfly = self.butterfly {
+            butterfly.zPosition=10
             let colorize = SKAction.colorize(with: .white, colorBlendFactor: 1, duration: 5)
-            spinnyNode.run(colorize)
+            butterfly.run(colorize)
+        }
+        if let bottle = self.bottle {
+            bottle.zPosition=5
+            let colorize = SKAction.colorize(with: .white, colorBlendFactor: 1, duration: 5)
+            bottle.run(colorize)
         }
     }
     
     override func didMove(to view: SKView) {
-        self.background = SKSpriteNode(imageNamed: "sky.pdf")
+        self.background = SKSpriteNode(imageNamed: "sky")
         if let view = self.view {
             if let background = self.background {
                 background.zPosition = 1
@@ -56,32 +60,56 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKSpriteNode? {
-            n.position = pos
-            n.zPosition = 5
+        if let bottle = self.bottle?.copy() as! SKSpriteNode? {
+            bottle.position = pos
+            bottle.zPosition = 5
             let colorize = SKAction.colorize(with: .green, colorBlendFactor: 1, duration: 5)
-            n.run(colorize)
-            self.addChild(n)
+            bottle.run(colorize)
+            self.addChild(bottle)
+        }
+        if let butterfly = self.butterfly?.copy() as! SKSpriteNode? {
+            let number = Int.random(in: 0 ..< 10)
+            butterfly.position = CGPoint(x: butterfly.position.x+CGFloat(number), y: butterfly.position.y+CGFloat(number))
+            butterfly.zPosition = 10
+            let colorize = SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 5)
+            butterfly.run(colorize)
+            self.addChild(butterfly)
         }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKSpriteNode? {
-            n.position = pos
-            n.zPosition = 5
+        if let bottle = self.bottle?.copy() as! SKSpriteNode? {
+            bottle.position = pos
+            bottle.zPosition = 5
             let colorize = SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 5)
-            n.run(colorize)
-            self.addChild(n)
+            bottle.run(colorize)
+            self.addChild(bottle)
+        }
+        if let butterfly = self.butterfly?.copy() as! SKSpriteNode? {
+            let number = Int.random(in: 0 ..< 10)
+            butterfly.position = CGPoint(x: butterfly.position.x+CGFloat(number), y: butterfly.position.y+CGFloat(number))
+            butterfly.zPosition = 10
+            let colorize = SKAction.colorize(with: .red, colorBlendFactor: 1, duration: 5)
+            butterfly.run(colorize)
+            self.addChild(butterfly)
         }
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKSpriteNode? {
-            n.position = pos
-            n.zPosition = 5
+        if let bottle = self.bottle?.copy() as! SKSpriteNode? {
+            bottle.position = pos
+            bottle.zPosition = 5
             let colorize = SKAction.colorize(with: .red, colorBlendFactor: 1, duration: 5)
-            n.run(colorize)
-            self.addChild(n)
+            bottle.run(colorize)
+            self.addChild(bottle)
+        }
+        if let butterfly = self.butterfly?.copy() as! SKSpriteNode? {
+            let number = Int.random(in: 0 ..< 10)
+            butterfly.position = CGPoint(x: butterfly.position.x+CGFloat(number), y: butterfly.position.y+CGFloat(number))
+            butterfly.zPosition = 10
+            let colorize = SKAction.colorize(with: .green, colorBlendFactor: 1, duration: 5)
+            butterfly.run(colorize)
+            self.addChild(butterfly)
         }
     }
     
