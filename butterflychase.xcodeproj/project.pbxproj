@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		48EC7D3FA574898B962DDD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EC7E5C5C3E12FA374D3AB6 /* Main.storyboard */; };
 		48EC7EAC7A5B8FBA7B25800D /* butterflychaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC7C056CC33AE8605B9F17 /* butterflychaseUITests.swift */; };
 		48EC7EC4732E17CE3F1AFFDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EC74584A1B995679742CDE /* LaunchScreen.storyboard */; };
+		62AA8529248C47400035B75A /* music.caf in Resources */ = {isa = PBXBuildFile; fileRef = 62AA8528248C47400035B75A /* music.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		48EC7C2D870534C4957EA5BD /* butterflychaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = butterflychaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EC7D2802D267D04A6B27A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		48EC7E789758FDD33A1A78D1 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		62AA8528248C47400035B75A /* music.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = music.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		48EC73BF30ABA676B641435C /* butterflychase */ = {
 			isa = PBXGroup;
 			children = (
+				62AA8528248C47400035B75A /* music.caf */,
 				48EC76D19AFFFE8D32D01354 /* Info.plist */,
 				48EC7BF3FF2C0D7A2794A533 /* Assets.xcassets */,
 				48EC74584A1B995679742CDE /* LaunchScreen.storyboard */,
@@ -205,7 +208,7 @@
 				};
 			};
 			buildConfigurationList = 48EC7C99D017D3A02DA01BDC /* Build configuration list for PBXProject "butterflychase" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -245,6 +248,7 @@
 			files = (
 				48EC7BF142A4A9C126972392 /* Assets.xcassets in Resources */,
 				48EC7EC4732E17CE3F1AFFDC /* LaunchScreen.storyboard in Resources */,
+				62AA8529248C47400035B75A /* music.caf in Resources */,
 				48EC7D3FA574898B962DDD13 /* Main.storyboard in Resources */,
 				48EC7ADF0A835A8270A161C0 /* GameScene.sks in Resources */,
 				48EC70F596C55FC5A30F9310 /* Actions.sks in Resources */,
@@ -319,7 +323,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = butterflychaseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -333,7 +341,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/butterflychase.app/butterflychase";
 				INFOPLIST_FILE = butterflychaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -346,11 +358,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = A7FB9QLQNX;
 				INFOPLIST_FILE = butterflychase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = INFO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -466,7 +483,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -476,7 +494,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/butterflychase.app/butterflychase";
 				INFOPLIST_FILE = butterflychaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -489,7 +511,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = butterflychaseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -502,11 +528,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = A7FB9QLQNX;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = butterflychase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vent.butterflychase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
