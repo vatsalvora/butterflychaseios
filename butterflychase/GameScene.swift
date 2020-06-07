@@ -27,25 +27,21 @@ class GameScene: SKScene {
         self.caught = 1
         
         // Get label node from scene and store it for use later
-        self.label = SKLabelNode(text: "Butterfly")
+        self.label = SKLabelNode(text: "Butterfly Chase")
         if let label = self.label {
             label.alpha = 1
             label.zPosition = 5
             label.position = CGPoint(x: -100,
             y: 300)
-            let fade = SKAction.fadeIn(withDuration: 2.0)
-            label.run(fade)
             self.addChild(label)
         }
 
         self.butterfly = SKSpriteNode(imageNamed: "butterfly")
-        self.chaser = SKSpriteNode(imageNamed: "butterfly")
+        self.chaser = SKSpriteNode(imageNamed: "chaser")
         if let butterfly = self.butterfly {
             butterfly.zPosition=10
             butterfly.position = CGPoint(x: 0,
             y: 0)
-            let colorize = SKAction.colorize(with: .white, colorBlendFactor: 1, duration: 5)
-            butterfly.run(colorize)
             self.addChild(butterfly)
         }
         if let chaser = self.chaser {
@@ -87,8 +83,6 @@ class GameScene: SKScene {
                 let yNewPos = (yNumber + Int(butterfly.position.y))%(Int(self.frame.height)/2)
                 let newPos = CGPoint(x: CGFloat(xNewPos), y: CGFloat(yNewPos))
                 butterfly.position = newPos
-                let move = SKAction.move(to: newPos, duration: 0.1)
-                butterfly.run(move)
                 let dist = (butterfly.position.x - chaser.position.x) * (butterfly.position.x - chaser.position.x) + (butterfly.position.y - chaser.position.y) * (butterfly.position.y - chaser.position.y)
                 if dist < 100 {
                     print("Caught!!")
