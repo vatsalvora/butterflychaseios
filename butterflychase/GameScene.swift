@@ -13,6 +13,8 @@ class GameScene: SKScene {
     
     private var background : SKSpriteNode?
     private var music : SKAudioNode?
+    private var butterfly : SKSpriteNode?
+    private var chaser : SKSpriteNode?
     
     override func didMove(to view: SKView) {
         self.background = SKSpriteNode(imageNamed: "sky")
@@ -29,13 +31,29 @@ class GameScene: SKScene {
         let play = SKAction.play()
         music.run(play)
         self.addChild(music)
+        
+        self.butterfly = SKSpriteNode(imageNamed: "butterfly")
+        
+        if let butterfly = self.butterfly{
+            butterfly.zPosition = 5
+            self.addChild(butterfly)
+        }
+        
+        self.chaser = SKSpriteNode(imageNamed: "chaser")
+       
+        if let chaser = self.chaser{
+            chaser.zPosition = 10
+            self.addChild(chaser)
+        }
     }
-    
     
     func touchDown(atPoint pos : CGPoint) {
     }
     
     func touchMoved(toPoint pos : CGPoint) {
+        if let chaser = self.chaser {
+            chaser.position = pos
+        }
     }
     
     func touchUp(atPoint pos : CGPoint) {
