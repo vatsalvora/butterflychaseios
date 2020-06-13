@@ -53,6 +53,13 @@ class GameScene: SKScene {
     func touchMoved(toPoint pos : CGPoint) {
         if let chaser = self.chaser {
             chaser.position = pos
+            if let butterfly = self.butterfly {
+                let randX = Int.random(in: -300 ..< 300)
+                let randY = Int.random(in: -300 ..< 300)
+                let xNewPos = (randX + Int(butterfly.position.x))%(Int(self.frame.width)/2)
+                let yNewPos = (randY + Int(butterfly.position.y))%(Int(self.frame.height)/2)
+                butterfly.position = CGPoint(x:CGFloat(xNewPos),y:CGFloat(yNewPos))
+            }
         }
     }
     
