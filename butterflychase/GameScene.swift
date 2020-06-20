@@ -15,6 +15,8 @@ class GameScene: SKScene {
     private var music : SKAudioNode?
     private var butterfly : SKSpriteNode?
     private var chaser : SKSpriteNode?
+    private var countLabel : SKLabelNode?
+    private var timeLabel : SKLabelNode?
     
     override func didMove(to view: SKView) {
         self.background = SKSpriteNode(imageNamed: "sky")
@@ -45,6 +47,30 @@ class GameScene: SKScene {
             chaser.zPosition = 10
             self.addChild(chaser)
         }
+        
+        self.countLabel = SKLabelNode()
+        if let countLabel = self.countLabel{
+            countLabel.alpha = 1
+            countLabel.text = "Count: "
+            countLabel.fontColor = SKColor.white
+            countLabel.zPosition = 5
+            countLabel.position = CGPoint(x: self.frame.minX + 100,
+                                          y: self.frame.maxY - 100)
+            self.addChild(countLabel)
+        }
+        
+        self.timeLabel = SKLabelNode()
+        if let timeLabel = self.timeLabel{
+            timeLabel.alpha = 1
+            timeLabel.text = "Time: "
+            timeLabel.fontColor = SKColor.white
+            timeLabel.zPosition = 5
+            timeLabel.position = CGPoint(x: self.frame.midX + 100,
+                                         y: self.frame.maxY - 100)
+            self.addChild(timeLabel)
+        }
+        
+
     }
     
     func touchDown(atPoint pos : CGPoint) {
