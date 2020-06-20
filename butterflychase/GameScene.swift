@@ -17,6 +17,8 @@ class GameScene: SKScene {
     private var chaser : SKSpriteNode?
     private var countLabel : SKLabelNode?
     private var timeLabel : SKLabelNode?
+    private var count : Int?
+    private var startTime : Date?
     
     override func didMove(to view: SKView) {
         self.background = SKSpriteNode(imageNamed: "sky")
@@ -47,18 +49,20 @@ class GameScene: SKScene {
             chaser.zPosition = 10
             self.addChild(chaser)
         }
+        self.count = 0
         
         self.countLabel = SKLabelNode()
         if let countLabel = self.countLabel{
             countLabel.alpha = 1
-            countLabel.text = "Count: "
+            countLabel.text = "Caught: "
             countLabel.fontColor = SKColor.white
             countLabel.zPosition = 5
             countLabel.position = CGPoint(x: self.frame.minX + 100,
                                           y: self.frame.maxY - 100)
             self.addChild(countLabel)
         }
-        
+
+        self.startTime = Date()
         self.timeLabel = SKLabelNode()
         if let timeLabel = self.timeLabel{
             timeLabel.alpha = 1
@@ -85,6 +89,18 @@ class GameScene: SKScene {
                 let xNewPos = (randX + Int(butterfly.position.x))%(Int(self.frame.width)/2)
                 let yNewPos = (randY + Int(butterfly.position.y))%(Int(self.frame.height)/2)
                 butterfly.position = CGPoint(x:CGFloat(xNewPos),y:CGFloat(yNewPos))
+                let dist = (butterfly.position.x - chaser.position.x) *
+                    (butterfly.position.x - chaser.position.x) +
+                    (butterfly.position.y - chaser.position.y) *
+                    (butterfly.position.y - chaser.position.y)
+                if dist < 100 { //Buttefly is Caught!!
+                    if let countLabel = self.countLabel {
+                        if let count = self.count {
+                            countLabel.text = "Caught: " + String(count+1)
+                            self.count = count+1
+                        }
+                    }
+                }
             }
         }
     }
@@ -111,5 +127,11 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        if let startTime = self.startTime{
+            let duration = Int(-1*round(startTime.timeIntervalSinceNow))
+            if let timeLabel = self.timeLabel {
+                timeLabel.text = "Time: " + String(duration) + "s"
+            }
+        }
     }
 }
