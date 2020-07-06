@@ -2,8 +2,8 @@
 //  GameScene.swift
 //  butterflychase
 //
-//  Created by Vatsal Vora on 5/15/20.
-//  Copyright © 2020 voraentertainment. All rights reserved.
+//  Created by Vatsal Vora on 6/7/20.
+//  Copyright © 2020 Vatsal Vora. All rights reserved.
 //
 
 import SpriteKit
@@ -11,113 +11,104 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    var entities = [GKEntity]()
-    var graphs = [String : GKGraph]()
-    
-    private var lastUpdateTime : TimeInterval = 0
-    private var label : SKLabelNode?
-    private var butterfly : SKSpriteNode?
-    private var bottle : SKSpriteNode?
     private var background : SKSpriteNode?
-    
-    override func sceneDidLoad() {
-
-        self.lastUpdateTime = 0
-        
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-        
-
-        self.butterfly = SKSpriteNode(imageNamed: "butterfly")
-        self.bottle = SKSpriteNode(imageNamed: "bottle")
-        if let butterfly = self.butterfly {
-            butterfly.zPosition=10
-            let colorize = SKAction.colorize(with: .white, colorBlendFactor: 1, duration: 5)
-            butterfly.run(colorize)
-        }
-        if let bottle = self.bottle {
-            bottle.zPosition=5
-            let colorize = SKAction.colorize(with: .white, colorBlendFactor: 1, duration: 5)
-            bottle.run(colorize)
-        }
-    }
+    private var music : SKAudioNode?
+    private var butterfly : SKSpriteNode?
+    private var chaser : SKSpriteNode?
+    private var countLabel : SKLabelNode?
+    private var timeLabel : SKLabelNode?
+    private var count : Int?
+    private var startTime : Date?
     
     override func didMove(to view: SKView) {
         self.background = SKSpriteNode(imageNamed: "sky")
         if let view = self.view {
             if let background = self.background {
                 background.zPosition = 1
-                background.size =  view.frame.size
-                background.position = CGPoint(x: 0,
-                                              y: 0)
+                background.size = view.frame.size
                 self.addChild(background)
+            }
+        }
+        let music = SKAudioNode(fileNamed: "music.caf")
+        music.autoplayLooped = true
+        music.isPositional = false
+        let play = SKAction.play()
+        music.run(play)
+        self.addChild(music)
+        
+        self.butterfly = SKSpriteNode(imageNamed: "butterfly")
+        
+        if let butterfly = self.butterfly{
+            butterfly.zPosition = 5
+            self.addChild(butterfly)
+        }
+        
+        self.chaser = SKSpriteNode(imageNamed: "chaser")
+       
+        if let chaser = self.chaser{
+            chaser.zPosition = 10
+            self.addChild(chaser)
+        }
+        self.count = 0
+        
+        self.countLabel = SKLabelNode()
+        if let countLabel = self.countLabel{
+            countLabel.alpha = 1
+            countLabel.text = "Caught: "
+            countLabel.fontColor = SKColor.white
+            countLabel.zPosition = 5
+            countLabel.position = CGPoint(x: self.frame.minX + 100,
+                                          y: self.frame.maxY - 100)
+            self.addChild(countLabel)
+        }
+
+        self.startTime = Date()
+        self.timeLabel = SKLabelNode()
+        if let timeLabel = self.timeLabel{
+            timeLabel.alpha = 1
+            timeLabel.text = "Time: "
+            timeLabel.fontColor = SKColor.white
+            timeLabel.zPosition = 5
+            timeLabel.position = CGPoint(x: self.frame.midX + 100,
+                                         y: self.frame.maxY - 100)
+            self.addChild(timeLabel)
+        }
+        
+
+    }
+    
+    func touchDown(atPoint pos : CGPoint) {
+    }
+    
+    func touchMoved(toPoint pos : CGPoint) {
+        if let chaser = self.chaser {
+            chaser.position = pos
+            if let butterfly = self.butterfly {
+                let randX = Int.random(in: -300 ..< 300)
+                let randY = Int.random(in: -300 ..< 300)
+                let xNewPos = (randX + Int(butterfly.position.x))%(Int(self.frame.width)/2)
+                let yNewPos = (randY + Int(butterfly.position.y))%(Int(self.frame.height)/2)
+                butterfly.position = CGPoint(x:CGFloat(xNewPos),y:CGFloat(yNewPos))
+                let dist = (butterfly.position.x - chaser.position.x) *
+                    (butterfly.position.x - chaser.position.x) +
+                    (butterfly.position.y - chaser.position.y) *
+                    (butterfly.position.y - chaser.position.y)
+                if dist < 100 { //Buttefly is Caught!!
+                    if let countLabel = self.countLabel {
+                        if let count = self.count {
+                            countLabel.text = "Caught: " + String(count+1)
+                            self.count = count+1
+                        }
+                    }
+                }
             }
         }
     }
     
-    func touchDown(atPoint pos : CGPoint) {
-        if let bottle = self.bottle?.copy() as! SKSpriteNode? {
-            bottle.position = pos
-            bottle.zPosition = 5
-            let colorize = SKAction.colorize(with: .green, colorBlendFactor: 1, duration: 5)
-            bottle.run(colorize)
-            self.addChild(bottle)
-        }
-        if let butterfly = self.butterfly?.copy() as! SKSpriteNode? {
-            let number = Int.random(in: 0 ..< 10)
-            butterfly.position = CGPoint(x: butterfly.position.x+CGFloat(number), y: butterfly.position.y+CGFloat(number))
-            butterfly.zPosition = 10
-            let colorize = SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 5)
-            butterfly.run(colorize)
-            self.addChild(butterfly)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let bottle = self.bottle?.copy() as! SKSpriteNode? {
-            bottle.position = pos
-            bottle.zPosition = 5
-            let colorize = SKAction.colorize(with: .blue, colorBlendFactor: 1, duration: 5)
-            bottle.run(colorize)
-            self.addChild(bottle)
-        }
-        if let butterfly = self.butterfly?.copy() as! SKSpriteNode? {
-            let number = Int.random(in: 0 ..< 10)
-            butterfly.position = CGPoint(x: butterfly.position.x+CGFloat(number), y: butterfly.position.y+CGFloat(number))
-            butterfly.zPosition = 10
-            let colorize = SKAction.colorize(with: .red, colorBlendFactor: 1, duration: 5)
-            butterfly.run(colorize)
-            self.addChild(butterfly)
-        }
-    }
-    
     func touchUp(atPoint pos : CGPoint) {
-        if let bottle = self.bottle?.copy() as! SKSpriteNode? {
-            bottle.position = pos
-            bottle.zPosition = 5
-            let colorize = SKAction.colorize(with: .red, colorBlendFactor: 1, duration: 5)
-            bottle.run(colorize)
-            self.addChild(bottle)
-        }
-        if let butterfly = self.butterfly?.copy() as! SKSpriteNode? {
-            let number = Int.random(in: 0 ..< 10)
-            butterfly.position = CGPoint(x: butterfly.position.x+CGFloat(number), y: butterfly.position.y+CGFloat(number))
-            butterfly.zPosition = 10
-            let colorize = SKAction.colorize(with: .green, colorBlendFactor: 1, duration: 5)
-            butterfly.run(colorize)
-            self.addChild(butterfly)
-        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
     
@@ -136,20 +127,11 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        
-        // Initialize _lastUpdateTime if it has not already been
-        if (self.lastUpdateTime == 0) {
-            self.lastUpdateTime = currentTime
+        if let startTime = self.startTime{
+            let duration = Int(-1*round(startTime.timeIntervalSinceNow))
+            if let timeLabel = self.timeLabel {
+                timeLabel.text = "Time: " + String(duration) + "s"
+            }
         }
-        
-        // Calculate time since last update
-        let dt = currentTime - self.lastUpdateTime
-        
-        // Update entities
-        for entity in self.entities {
-            entity.update(deltaTime: dt)
-        }
-        
-        self.lastUpdateTime = currentTime
     }
 }
